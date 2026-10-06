@@ -1,0 +1,46 @@
+# Copyright (C) 2026 MaxxOS. All rights reserved.
+#
+# Builds a test APK of the MaxxOS DeskClock using Gradle.
+# Run from the repo's "Actions" tab (Run workflow) or automatically on push.
+name: Build MaxxOS DeskClock APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ Staging ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK platform 37
+        run: |
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager "platforms;android-37" "build-tools;37.0.0" || sdkmanager "platforms;android-37"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build debug APK
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: MaxxOS-DeskClock-debug-apk
+          path: build/outputs/apk/debug/*.apk
+          if-no-files-found: error

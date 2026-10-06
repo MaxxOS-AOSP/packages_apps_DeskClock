@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+  Copyright (C) 2026 MaxxOS. All rights reserved.
+  MaxxOS UI redesign. Original AOSP notice below is retained.
+  -->
+<!--
   Copyright (C) 2016 The Android Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,6 +26,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/maxxos_bg_gradient"
     app:statusBarBackground="@null"
     android:fitsSystemWindows="true">
 
@@ -117,15 +122,29 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_view"
+    <!-- MaxxOS: floating pill navigation -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorSurfaceVariant"
-        app:menu="@menu/bottom_navigation_menu"
-        app:itemIconTint="@color/tab_tint_color"
-        app:itemTextColor="@color/tab_tint_color"
-        app:itemTextAppearanceActive="@style/navText"
-        app:itemTextAppearanceInactive="@style/navText"
-        app:labelVisibilityMode="labeled" />
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/maxxos_nav_margin_horizontal"
+        android:paddingEnd="@dimen/maxxos_nav_margin_horizontal"
+        android:paddingTop="@dimen/maxxos_nav_margin_vertical"
+        android:paddingBottom="@dimen/maxxos_nav_margin_vertical">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_view"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/maxxos_nav_height"
+            android:background="@drawable/maxxos_nav_pill"
+            android:elevation="@dimen/maxxos_nav_elevation"
+            app:menu="@menu/bottom_navigation_menu"
+            app:itemIconTint="@color/tab_tint_color"
+            app:itemTextColor="@color/tab_tint_color"
+            app:itemTextAppearanceActive="@style/navText"
+            app:itemTextAppearanceInactive="@style/navText"
+            app:itemActiveIndicatorStyle="@style/Widget.MaxxOS.BottomNav.ActiveIndicator"
+            app:labelVisibilityMode="unlabeled" />
+    </FrameLayout>
 </LinearLayout>

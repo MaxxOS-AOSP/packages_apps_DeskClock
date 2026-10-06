@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2026 MaxxOS. All rights reserved.
+  MaxxOS UI redesign. Original AOSP notice below is retained.
+  -->
 <!-- Copyright (C) 2016 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,24 +25,25 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/hours_ahead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="2dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:scrollHorizontally="true"
+        android:textAppearance="@style/MaxxOS.WorldClock.Offset"
+        tools:text="1 hour ahead"/>
+
+    <TextView
         android:id="@+id/city_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:singleLine="true"
-        android:textAppearance="@style/body"
+        android:textAppearance="@style/MaxxOS.WorldClock.City"
         tools:text="Fictive city"/>
 
-    <TextView
-        android:id="@+id/hours_ahead"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="3dp"
-        android:ellipsize="end"
-        android:maxLines="2"
-        android:scrollHorizontally="true"
-        android:textAppearance="@style/SecondaryLabelTextAppearance"
-        tools:text="1 hour ahead"/>
 
 </LinearLayout>
 
