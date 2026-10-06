@@ -31,3 +31,9 @@ Landscape layout keeps the old side button column.
 iOS World Clock look: res/layout/world_clock_item.xml (flat rows + hairline divider), res/values/maxxos_strings.xml,
 src/com/android/deskclock/ClockFragment.java (offset label like "Today, +9HRS" / "Tomorrow, +16HRS").
 Nav pill now uses theme (dynamic) colours; selected tab shows its label (MaxxDolby style).
+
+Nav pill: translucent glass look (res/drawable/maxxos_nav_pill.xml, maxxos_colors.xml).
+
+Liquid glass nav: src/com/android/deskclock/widget/MaxxOSLiquidNavigationView.java (new) used in
+res/layout/desk_clock.xml and res/layout-land/desk_clock.xml. Glass bubble stretches between tabs,
+lens-magnifies the icon/label inside, grows on press, and follows a dragging finger.

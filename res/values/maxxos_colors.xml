@@ -28,4 +28,7 @@
     <color name="maxxos_nav_stroke">#33FFFFFF</color>
     <color name="maxxos_nav_indicator">#665B6CFF</color>
     <color name="maxxos_divider">#26FFFFFF</color>
+    <!-- translucent "glass" nav pill (see MaxxOS nav reference) -->
+    <color name="maxxos_nav_glass">#B3262A4D</color>
+    <color name="maxxos_nav_glass_stroke">#59FFFFFF</color>
 </resources>

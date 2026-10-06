@@ -112,7 +112,7 @@
         android:paddingTop="@dimen/maxxos_nav_margin_vertical"
         android:paddingBottom="@dimen/maxxos_nav_margin_vertical">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <com.android.deskclock.widget.MaxxOSLiquidNavigationView
             android:id="@+id/bottom_view"
             android:layout_width="0dp"
             android:layout_height="@dimen/maxxos_nav_height"
