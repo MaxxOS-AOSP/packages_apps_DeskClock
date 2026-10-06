@@ -16,16 +16,10 @@
   -->
 
 <resources>
-    <!-- MaxxOS clock palette: soft indigo gradient with translucent glass cards -->
-    <color name="maxxos_bg_start">#FF1B1F3B</color>
-    <color name="maxxos_bg_mid">#FF14172B</color>
-    <color name="maxxos_bg_end">#FF0B0C16</color>
-
-    <color name="maxxos_card">#26FFFFFF</color>
-    <color name="maxxos_card_stroke">#1AFFFFFF</color>
-
-    <color name="maxxos_nav_pill">#E61E2140</color>
-    <color name="maxxos_nav_stroke">#33FFFFFF</color>
-    <color name="maxxos_nav_indicator">#665B6CFF</color>
-    <color name="maxxos_divider">#26FFFFFF</color>
+    <string name="maxxos_world_today">Today</string>
+    <string name="maxxos_world_tomorrow">Tomorrow</string>
+    <string name="maxxos_world_yesterday">Yesterday</string>
+    <string name="maxxos_world_hours_suffix">HRS</string>
+    <!-- e.g. "Today, +9HRS" -->
+    <string name="maxxos_world_offset_format">%1$s, %2$s</string>
 </resources>

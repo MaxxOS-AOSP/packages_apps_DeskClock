@@ -187,9 +187,9 @@
     <!-- MaxxOS: pill-shaped selected-tab indicator for the floating nav -->
     <style name="Widget.MaxxOS.BottomNav.ActiveIndicator"
         parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-        <item name="android:color">@color/maxxos_nav_indicator</item>
+        <item name="android:color">?attr/colorSecondaryContainer</item>
         <item name="android:width">64dp</item>
-        <item name="android:height">40dp</item>
+        <item name="android:height">32dp</item>
     </style>
 
     <style name="TimerSetupTime">

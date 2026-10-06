@@ -24,6 +24,7 @@
     <style name="Theme.DeskClock" parent="Theme.Material3Expressive.DynamicColors.Dark.NoActionBar">
         <item name="android:colorBackgroundFloating">?attr/colorBackgroundFloating</item>
         <item name="android:navigationBarColor">@color/maxxos_bg_end</item>
+        <item name="android:statusBarColor">@color/maxxos_bg_start</item>
         <item name="popupMenuBackground">@drawable/popup_background</item>
         <item name="floatingActionButtonStyle">@style/Widget.DeskClock.FloatingActionButton</item>
 

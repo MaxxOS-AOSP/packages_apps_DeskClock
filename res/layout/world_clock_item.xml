@@ -21,20 +21,19 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/MaterialCardViewStyle"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:background="@drawable/alarm_background"
-    android:paddingTop="20.0dip"
-    android:paddingBottom="20.0dip"
-    android:paddingStart="16.0dip"
-    android:paddingEnd="16.0dip">
+    android:orientation="vertical"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp">
 
         <include
             layout="@layout/world_clock_city_container"
@@ -46,8 +45,8 @@
             android:id="@+id/digital_clock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="24dp"
             android:layout_gravity="end"
+            android:paddingStart="16dp"
             android:singleLine="true"
             android:textAppearance="@style/world_clock_time"
             tools:text="01:23"/>
@@ -56,10 +55,15 @@
             android:id="@+id/analog_clock"
             android:layout_width="@dimen/world_clock_analog_size"
             android:layout_height="@dimen/world_clock_analog_size"
-            android:paddingStart="24dp"
             android:layout_gravity="end"
             android:layout_marginBottom="@dimen/bottom_text_spacing_analog_small"
+            android:paddingStart="24dp"
             android:visibility="gone"/>
-
     </LinearLayout>
+
+    <!-- MaxxOS: hairline divider like the iOS World Clock list -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/maxxos_divider" />
 </LinearLayout>

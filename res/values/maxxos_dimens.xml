@@ -20,6 +20,9 @@
     <dimen name="maxxos_card_radius">28dp</dimen>
     <dimen name="maxxos_nav_height">64dp</dimen>
     <dimen name="maxxos_nav_elevation">8dp</dimen>
-    <dimen name="maxxos_nav_margin_horizontal">32dp</dimen>
+    <dimen name="maxxos_nav_margin_horizontal">20dp</dimen>
     <dimen name="maxxos_nav_margin_vertical">12dp</dimen>
+    <dimen name="maxxos_fab_gap">12dp</dimen>
+    <dimen name="maxxos_side_button_size">52dp</dimen>
+    <dimen name="maxxos_side_button_margin">6dp</dimen>
 </resources>

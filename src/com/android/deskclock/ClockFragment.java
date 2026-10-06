@@ -1,4 +1,7 @@
 /*
+ * Copyright (C) 2026 MaxxOS. All rights reserved.
+ * MaxxOS UI redesign. Original AOSP notice below is retained.
+ *
  * Copyright (C) 2012 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,6 +54,7 @@ import com.android.deskclock.uidata.UiDataModel;
 import com.android.deskclock.worldclock.CitySelectionActivity;
 
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -455,15 +459,22 @@ public final class ClockFragment extends DeskClockFragment {
                 final boolean displayMinutes = offsetDelta % DateUtils.HOUR_IN_MILLIS != 0;
                 final boolean isAhead = hoursDifferent > 0 || (hoursDifferent == 0
                         && minutesDifferent > 0);
-                // Bind the number of hours ahead or behind, or hide if the time is the same.
-                final boolean displayDifference = hoursDifferent != 0 || displayMinutes;
-                mHoursAhead.setVisibility(displayDifference ? VISIBLE : GONE);
-                final String timeString = Utils.createHoursDifferentString(
-                        context, displayMinutes, isAhead, hoursDifferent, minutesDifferent);
-                mHoursAhead.setText(displayDayOfWeek ?
-                        (context.getString(isAhead ? R.string.world_hours_tomorrow
-                                : R.string.world_hours_yesterday, timeString))
-                        : timeString);
+                // MaxxOS: iOS-style offset label, e.g. "Today, +9HRS" / "Tomorrow, +16HRS".
+                mHoursAhead.setVisibility(VISIBLE);
+                final String dayWord = displayDayOfWeek
+                        ? context.getString(isAhead ? R.string.maxxos_world_tomorrow
+                                : R.string.maxxos_world_yesterday)
+                        : context.getString(R.string.maxxos_world_today);
+                final int absMinutes = Math.abs(minutesDifferent);
+                final String sign = (offsetDelta < 0) ? "-" : "+";
+                final String diff = displayMinutes
+                        ? String.format(Locale.getDefault(), "%s%d:%02d",
+                                sign, Math.abs(hoursDifferent), absMinutes)
+                        : String.format(Locale.getDefault(), "%s%d%s",
+                                sign, Math.abs(hoursDifferent),
+                                context.getString(R.string.maxxos_world_hours_suffix));
+                mHoursAhead.setText(context.getString(R.string.maxxos_world_offset_format,
+                        dayWord, diff));
             }
         }
 

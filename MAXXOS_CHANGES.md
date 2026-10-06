@@ -19,6 +19,15 @@ Original AOSP/Apache notices are kept as required by the licence.
 Java code and Android.bp are untouched.
 
 World Clock (iOS style): res/layout/world_clock_city_container.xml (offset label above city name),
-res/layout/world_clock_item.xml (row padding), res/values/styles.xml (MaxxOS.WorldClock.* text styles, 42sp time).
+res/layout/world_clock_item.xml (row padding), res/values/styles.xml (MaxxOSWorldClock* text styles, 42sp time).
 
 CI: .github/workflows/build-apk.yml builds a debug APK (package com.android.deskclock.dev) via Gradle.
+
+Bottom row (portrait): main round button (plus / world / start-pause) now sits beside the floating pill nav.
+Secondary round buttons (lap / reset / add) float just above that row, right side.
+res/layout/desk_clock.xml, res/values/maxxos_dimens.xml; status bar colour matches gradient (res/values/themes.xml).
+Landscape layout keeps the old side button column.
+
+iOS World Clock look: res/layout/world_clock_item.xml (flat rows + hairline divider), res/values/maxxos_strings.xml,
+src/com/android/deskclock/ClockFragment.java (offset label like "Today, +9HRS" / "Tomorrow, +16HRS").
+Nav pill now uses theme (dynamic) colours; selected tab shows its label (MaxxDolby style).
