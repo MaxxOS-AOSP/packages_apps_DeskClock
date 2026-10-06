@@ -74,13 +74,13 @@
     </style>
 
     <!-- MaxxOS: iOS-style world clock row text -->
-    <style name="MaxxOS.WorldClock.Offset">
+    <style name="MaxxOSWorldClockOffset">
         <item name="android:textSize">13sp</item>
         <item name="android:textColor">@color/white_63p</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
 
-    <style name="MaxxOS.WorldClock.City">
+    <style name="MaxxOSWorldClockCity">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">sans-serif-medium</item>

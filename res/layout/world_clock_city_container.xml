@@ -32,7 +32,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:scrollHorizontally="true"
-        android:textAppearance="@style/MaxxOS.WorldClock.Offset"
+        android:textAppearance="@style/MaxxOSWorldClockOffset"
         tools:text="1 hour ahead"/>
 
     <TextView
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:singleLine="true"
-        android:textAppearance="@style/MaxxOS.WorldClock.City"
+        android:textAppearance="@style/MaxxOSWorldClockCity"
         tools:text="Fictive city"/>
 
 
