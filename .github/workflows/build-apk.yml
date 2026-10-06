@@ -30,7 +30,17 @@ jobs:
       - name: Install SDK platform 37
         run: |
           yes | sdkmanager --licenses > /dev/null || true
-          sdkmanager "platforms;android-37" "build-tools;37.0.0" || sdkmanager "platforms;android-37"
+          echo "Available platform 36/37 packages:"
+          sdkmanager --list 2>/dev/null | grep -iE "platforms;android-3[67]" || true
+          for ch in 0 3; do
+            for p in "platforms;android-37.0" "platforms;android-37"; do
+              if sdkmanager --channel=$ch "$p"; then
+                echo "Installed $p (channel $ch)"
+                exit 0
+              fi
+            done
+          done
+          echo "Manual install failed; Gradle will try to auto-download the SDK."
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
